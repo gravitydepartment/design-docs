@@ -1,0 +1,25 @@
+# Quasar: Design System
+#
+# @author     Brendan Falkowski (http://gravitydept.com)
+# @copyright  2010-2016 Gravity Department. All rights reserved.
+# @license    All rights reserved.
+
+
+# ----------------------------------------------
+# URL Rewrites
+# ----------------------------------------------
+#
+# If the pattern library runs from a sub-folder like:
+# domain.com/design/
+#
+# Then you need to prefix the RewriteRule to index.php as:
+# /design/index.php
+#
+# Otherwise just use:
+# /index.php
+
+RewriteEngine on
+
+RewriteRule ^([a-z0-9_-]+)/?$                               /design/index.php?p1=$1
+RewriteRule ^([a-z0-9_-]+)/([a-z0-9_-]+)/?$                 /design/index.php?p1=$1&p2=$2
+RewriteRule ^([a-z0-9_-]+)/([a-z0-9_-]+)/([a-z0-9_-]+)/?$   /design/index.php?p1=$1&p2=$2&p3=$3

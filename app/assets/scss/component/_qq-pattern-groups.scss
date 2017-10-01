@@ -1,0 +1,98 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Pattern Groups
+// ==============================================
+
+.qq-pattern-groups {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.qq-pattern-groups_group {
+    //flex: 1 0 220px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.qq-pattern-groups h2 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 400px) {
+
+    .qq-pattern-groups_group {
+        width: 50%;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 600px) {
+
+    .qq-pattern-groups_group {
+        width: 33.33%;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 800px) {
+
+    .qq-pattern-groups_group {
+        width: 25%;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 1000px) {
+
+    .qq-pattern-groups_group {
+        width: 20%;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 1200px) {
+
+    .qq-pattern-groups_group {
+        width: 16.66%;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 1400px) {
+
+    .qq-pattern-groups_group {
+        width: 14.28%;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 1600px) {
+
+    .qq-pattern-groups_group {
+        width: 12.5%;
+    }
+
+}

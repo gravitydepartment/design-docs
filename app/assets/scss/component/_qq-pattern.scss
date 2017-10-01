@@ -1,0 +1,85 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Pattern
+// ==============================================
+
+.qq-pattern {
+    margin-bottom: 4em;
+}
+
+.qq-pattern_end {
+    width: 200px;
+    padding: 0.5em 0;
+    border-top: 1px solid $c-module-border;
+    color: $c-text-subtle;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+
+
+// ==============================================
+// QQ Pattern Disabled
+// ==============================================
+
+.qq-pattern-disabled {
+    padding: 15px;
+    border-radius: 2px;
+    background: $c-pattern-disabled-background;
+}
+
+
+
+// ==============================================
+// QQ Pattern Docs
+// ==============================================
+
+.qq-pattern-docs {
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 1200px) {
+
+    .qq-pattern-docs_column {
+        float: left;
+    }
+
+    .qq-pattern-docs_column:nth-child(1) {
+        width: 40%;
+        padding-right: 15px;
+    }
+
+    .qq-pattern-docs_column:nth-child(2) {
+        width: 60%;
+        padding-left: 15px;
+    }
+
+}
+
+
+
+// ==============================================
+// QQ Pattern Description
+// ==============================================
+
+//.qq-pattern-description {}
+
+
+
+// ==============================================
+// QQ Pattern Code
+// ==============================================
+
+.qq-pattern-code {
+    margin: 30px 0;
+}

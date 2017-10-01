@@ -1,0 +1,21 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Reset
+// ==============================================
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit; // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+}

@@ -1,0 +1,18 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Global
+// ==============================================
+
+.qq-site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: $c-body-background;
+}

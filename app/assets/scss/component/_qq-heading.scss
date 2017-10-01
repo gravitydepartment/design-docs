@@ -1,0 +1,45 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Heading
+// ==============================================
+
+.qq-heading {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 24px;
+    padding: 0 15px;
+    border-radius: 3px;
+    background: $c-heading-background;
+    color: $c-heading-text;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.qq-heading_action {
+    float: left;
+    margin-left: -15px;
+    margin: 0 15px 0 -15px;
+    padding: 0 12px;
+    border: 0;
+    background: $c-heading-link;
+    color: $c-heading-text;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    text-transform: uppercase;
+
+    &:hover {
+        background: $c-heading-link-hover;
+        color: $c-heading-text;
+    }
+}

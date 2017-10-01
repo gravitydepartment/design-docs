@@ -1,0 +1,48 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Hero
+// ==============================================
+
+.qq-hero {
+    margin: 3em auto 4em;
+    text-align: center;
+}
+
+.qq-hero_title {
+    margin-bottom: 0.3em;
+    font-size: 28px;
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 600px) {
+
+    .qq-hero_title {
+        font-size: 40px;
+    }
+
+    .qq-hero p {
+        font-size: 22px;
+    }
+
+}
+
+// ----------------------------------------------
+
+@media all and (min-width: 1000px) {
+
+    .qq-hero_title {
+        font-size: 60px;
+    }
+
+    .qq-hero p {
+        font-size: 28px;
+    }
+}

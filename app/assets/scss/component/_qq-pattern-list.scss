@@ -1,0 +1,36 @@
+/**
+* Quasar: Design System
+*
+* @author     Brendan Falkowski (http: //gravitydept.com)
+* @copyright  Gravity Department. All rights reserved.
+*/
+
+
+// ==============================================
+// QQ Pattern List
+// ==============================================
+
+.qq-pattern-list {
+    overflow: hidden;
+    margin-bottom: 2.5em;
+}
+
+.qq-pattern-list li:first-child {
+    border-top: 1px solid $c-module-border;
+}
+
+.qq-pattern-list [data-pattern-enabled='0'] {
+    opacity: 0.4;
+}
+
+.qq-pattern-list a {
+    display: block;
+    padding: 7px 10px;
+    border-bottom: 1px solid $c-module-border;
+    background: $c-module-background;
+    font-size: 15px;
+
+    &:hover {
+        background: $c-module-background-hover;
+    }
+}
