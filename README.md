@@ -1,6 +1,6 @@
 # GravDept Quasar
 
-Simple methods to test the browser's user agent string.
+Document your design system and pattern library.
 
 [![Gravity Department](http://gravitydept.com/_themes/gravdept/img/logo-footer.png)](http://gravitydept.com/)
 
