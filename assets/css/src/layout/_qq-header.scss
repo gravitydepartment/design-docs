@@ -13,7 +13,6 @@
 .qq-header {
     overflow: hidden;
     width: 100%;
-    padding: 0 5px;
     background: $c-header-background;
     color: $c-header-link;
     font-size: 14px;
@@ -25,6 +24,7 @@
     opacity: 0.8;
     color: $c-header-link;
     line-height: 44px;
+    text-decoration: none;
 
     &:first-child {
         opacity: 1;
