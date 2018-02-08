@@ -9,14 +9,18 @@
 
 // ----------------------------------------------
 // Error reporting
-// Only enabled if domain contains ".dev"
+// Only enabled if domain looks like a local environment.
 
-if (strstr($_SERVER['HTTP_HOST'], '.dev')) {
+if (
+    strstr($_SERVER['HTTP_HOST'], '.dev')
+    || strstr($_SERVER['HTTP_HOST'], '.local')
+    || strstr($_SERVER['HTTP_HOST'], '.test')
+    || strstr($_SERVER['HTTP_HOST'], 'localhost')
+) {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(-1);
 }
-
 
 // ----------------------------------------------
 // App files
@@ -27,7 +31,6 @@ require('config.php');
 $qq = array_merge($defaults, $config);
 
 require('app/functions.php');
-
 
 // ----------------------------------------------
 // Vendor modules
