@@ -83,7 +83,7 @@ var task = {
             path.assets + 'js/src/vendor/clipboard.js',
             path.assets + 'js/src/vendor/prism.js',
             // Initialize components
-            path.assets + 'js/src/quasar.js'
+            path.assets + 'js/src/app.js'
         ],
         uglifyOptions: {
             mangle: false
