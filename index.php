@@ -35,9 +35,8 @@ require('app/functions.php');
 // ----------------------------------------------
 // Vendor modules
 
-require('app/vendor/dipper/Dipper.php');
-require('app/vendor/parsedown/Parsedown.php');
-
+require('vendor/dipper/Dipper.php');
+require('vendor/parsedown/Parsedown.php');
 
 // ----------------------------------------------
 // Determine module type
