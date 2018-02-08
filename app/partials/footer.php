@@ -8,8 +8,8 @@
 */
 ?>
 
-            <?php if ($qq['debug']): ?>
-                <div class="qq-debug">
+            <?php if ($config['debug']): ?>
+                <div class="dd-debug">
                     <strong>Debug:</strong>
                     (<a href="<?php echo getUrl('debug'); ?>">View Page</a>)
                     <br>
@@ -21,22 +21,22 @@
                     ?>
                 </div>
             <?php endif; ?>
-        </main><!-- .qq-matter -->
+        </main><!-- .dd-matter -->
 
-        <footer class="qq-footer">
-            <div class="qq-footer_copyright">
-                Copyright &copy; <?php echo date('Y'); ?> <?php echo $qq['companyName']; ?>.<br>
+        <footer class="dd-footer">
+            <div class="dd-footer_copyright">
+                Copyright &copy; <?php echo date('Y'); ?> <?php echo $config['companyName']; ?>.<br>
                 All rights reserved.
             </div>
 
-            <div class="qq-footer_credits">
+            <div class="dd-footer_credits">
                 Powered by <a href="https://github.com/gravitydepartment/design-docs" target="_blank">Design Docs</a>.<br>
                 A tool from <a href="http://gravitydept.com" target="_blank">Gravity Department</a>.
             </div>
         </footer>
 
-        <?php echo implode($qq['jsBodyEnd']); ?>
+        <?php echo implode($config['jsBodyEnd']); ?>
         <script src="<?php echo getAssetUrl('js/build/app.min.js'); ?>"></script>
-    </div><!-- .qq-site-wrapper -->
+    </div><!-- .dd-site-wrapper -->
 </body>
 </html>

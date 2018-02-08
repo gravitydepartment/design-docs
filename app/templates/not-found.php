@@ -13,9 +13,9 @@
 // ==============================================
 ?>
 
-<div class="<?php echo $qq['containerClass']; ?>">
-    <div class="qq-hero">
-        <h1 class="qq-hero_title">Not Found</h1>
+<div class="<?php echo $config['containerClass']; ?>">
+    <div class="dd-hero">
+        <h1 class="dd-hero_title">Not Found</h1>
         <p>Sorry, that page doesn't exist.</p>
     </div>
 </div>

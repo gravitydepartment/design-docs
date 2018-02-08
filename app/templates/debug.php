@@ -13,8 +13,8 @@
 // ==============================================
 ?>
 
-<div class="<?php echo $qq['containerClass']; ?>">
-    <h1 class="qq-page-title">Debug</h1>
+<div class="<?php echo $config['containerClass']; ?>">
+    <h1 class="dd-page-title">Debug</h1>
 
 
     <!-- SECTION ******************************************** -->
@@ -107,9 +107,9 @@
     <pre><?php //print_r($files); ?></pre>
 
     <?php foreach ($files as $file): ?>
-        <div class="qq-pattern">
-            <div class="qq-heading">
-                <a class="qq-pattern_action" href="<?php echo $file; ?>">View</a>
+        <div class="dd-pattern">
+            <div class="dd-heading">
+                <a class="dd-pattern_action" href="<?php echo $file; ?>">View</a>
                 <?php echo $file; ?>
             </div>
 

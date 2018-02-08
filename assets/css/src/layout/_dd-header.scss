@@ -8,10 +8,10 @@
 
 
 // ==============================================
-// QQ Header
+// DD Header
 // ==============================================
 
-.qq-header {
+.dd-header {
     overflow: hidden;
     width: 100%;
     background: $c-header-background;
@@ -19,7 +19,7 @@
     font-size: 14px;
 }
 
-.qq-header a {
+.dd-header a {
     float: left;
     padding: 0 15px;
     opacity: 0.8;
@@ -38,6 +38,6 @@
     }
 }
 
-.qq-header .qq-visit-site {
+.dd-header .dd-visit-site {
     float: right;
 }

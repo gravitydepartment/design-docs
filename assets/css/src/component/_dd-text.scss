@@ -8,62 +8,62 @@
 
 
 // ==============================================
-// QQ Text
+// DD Text
 // ==============================================
 
 // ----------------------------------------------
 // Code
 
-.qq-text code {
+.dd-text code {
     font-size: 14px;
 }
 
 // ----------------------------------------------
 // Ordered List
 
-.qq-text ol {
+.dd-text ol {
     list-style: decimal outside;
     margin-bottom: 1.5em;
 }
 
-.qq-text ol li {
+.dd-text ol li {
     margin-left: 2em;
 }
 
 // ----------------------------------------------
 // Paragraph
 
-.qq-text p {
+.dd-text p {
     margin-bottom: 1.5em;
 }
 
 // ----------------------------------------------
 // Unordered List
 
-.qq-text ul {
+.dd-text ul {
     list-style: disc outside;
     margin-bottom: 1.5em;
 }
 
-.qq-text ul li {
+.dd-text ul li {
     margin-left: 2em;
 }
 
 // ----------------------------------------------
 // Table
 
-.qq-text table {
+.dd-text table {
     margin-bottom: 1.5em;
     border: 1px solid $c-module-border;
     font-size: 14px;
 }
 
-.qq-text th {
+.dd-text th {
     background: $c-module-background;
 }
 
-.qq-text td,
-.qq-text th {
+.dd-text td,
+.dd-text th {
     padding: 8px;
     border: 1px solid $c-module-border;
 }

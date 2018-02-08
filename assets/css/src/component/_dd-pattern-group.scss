@@ -8,35 +8,35 @@
 
 
 // ==============================================
-// QQ Pattern Group
+// DD Pattern Group
 // ==============================================
 
-.qq-pattern-group {
+.dd-pattern-group {
     overflow: hidden;
     margin-bottom: 2.5em;
 }
 
 
 // ==============================================
-// QQ Pattern Group - Item
+// DD Pattern Group - Item
 // ==============================================
 
-.qq-pattern-group_item {
+.dd-pattern-group_item {
     &:first-child {
         border-top: 1px solid $c-module-border;
     }
 }
 
-.qq-pattern-group_item[data-pattern-enabled='0'] {
+.dd-pattern-group_item[data-pattern-enabled='0'] {
     opacity: 0.4;
 }
 
 
 // ==============================================
-// QQ Pattern Group - Link
+// DD Pattern Group - Link
 // ==============================================
 
-.qq-pattern-group_link {
+.dd-pattern-group_link {
     display: block;
     padding: 7px 10px;
     border-bottom: 1px solid $c-module-border;

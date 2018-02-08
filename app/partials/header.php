@@ -13,24 +13,24 @@
 
 <head>
     <meta charset="utf-8">
-    <title><?php echo $qq['docsName']; ?></title>
+    <title><?php echo $config['docsName']; ?></title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
     <link rel="stylesheet" href="<?php echo getAssetUrl('css/build/app.css'); ?>">
 
     <?php
-    echo implode($qq['css']);
-    echo implode($qq['jsHead']);
+    echo implode($config['css']);
+    echo implode($config['jsHead']);
     ?>
 </head>
 
 <body>
-    <div class="qq-site-wrapper">
-        <header class="qq-header">
-            <a href="<?php echo getUrl(''); ?>"><?php echo $qq['docsName']; ?></a>
+    <div class="dd-site-wrapper">
+        <header class="dd-header">
+            <a href="<?php echo getUrl(''); ?>"><?php echo $config['docsName']; ?></a>
             <a href="<?php echo getUrl('patterns'); ?>">Patterns</a>
             <a href="<?php echo getUrl('patchwork'); ?>">Patchwork</a>
-            <a class="qq-visit-site" href="<?php echo $qq['siteUrl']; ?>" target="_blank">Visit Site ➚</a>
+            <a class="dd-visit-site" href="<?php echo $config['siteUrl']; ?>" target="_blank">Visit Site ➚</a>
         </header>
 
-        <main class="qq-matter">
+        <main class="dd-matter">

@@ -8,14 +8,14 @@
 
 
 // ==============================================
-// QQ Pattern
+// DD Pattern
 // ==============================================
 
-.qq-pattern {
+.dd-pattern {
     margin-bottom: 4em;
 }
 
-.qq-pattern_end {
+.dd-pattern_end {
     width: 200px;
     padding: 0.5em 0;
     border-top: 1px solid $c-module-border;
@@ -26,10 +26,10 @@
 
 
 // ==============================================
-// QQ Pattern Disabled
+// DD Pattern Disabled
 // ==============================================
 
-.qq-pattern-disabled {
+.dd-pattern-disabled {
     padding: 15px;
     border-radius: 2px;
     background: $c-pattern-disabled-background;
@@ -37,10 +37,10 @@
 
 
 // ==============================================
-// QQ Pattern Docs
+// DD Pattern Docs
 // ==============================================
 
-.qq-pattern-docs {
+.dd-pattern-docs {
     overflow: hidden;
     padding: 0 20px;
 }
@@ -49,16 +49,16 @@
 
 @media (min-width: 1200px) {
 
-    .qq-pattern-docs_column {
+    .dd-pattern-docs_column {
         float: left;
     }
 
-    .qq-pattern-docs_column:nth-child(1) {
+    .dd-pattern-docs_column:nth-child(1) {
         width: 40%;
         padding-right: 15px;
     }
 
-    .qq-pattern-docs_column:nth-child(2) {
+    .dd-pattern-docs_column:nth-child(2) {
         width: 60%;
         padding-left: 15px;
     }
@@ -67,16 +67,16 @@
 
 
 // ==============================================
-// QQ Pattern Description
+// DD Pattern Description
 // ==============================================
 
-//.qq-pattern-description {}
+//.dd-pattern-description {}
 
 
 // ==============================================
-// QQ Pattern Code
+// DD Pattern Code
 // ==============================================
 
-.qq-pattern-code {
+.dd-pattern-code {
     margin: 30px 0;
 }

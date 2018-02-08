@@ -42,9 +42,9 @@ function convertToMarkdown ($markdown) {
 * @return string
 */
 function getAssetUrl ($slug) {
-    global $qq;
+    global $config;
 
-    return $qq['docsUrl'] . 'assets/' . $slug;
+    return $config['docsUrl'] . 'assets/' . $slug;
 }
 
 /**
@@ -116,12 +116,12 @@ function getSlugFromPath ($path) {
 * @return string
 */
 function getUrl ($slug) {
-    global $qq;
+    global $config;
 
     if ($slug === '') {
-        return $qq['docsUrl'];
+        return $config['docsUrl'];
     } else {
-        return $qq['docsUrl'] . $slug . '/';
+        return $config['docsUrl'] . $slug . '/';
     }
 }
 

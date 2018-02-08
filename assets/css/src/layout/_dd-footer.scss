@@ -8,17 +8,17 @@
 
 
 // ==============================================
-// QQ Footer
+// DD Footer
 // ==============================================
 
-.qq-footer {
+.dd-footer {
     margin-top: 2.5em;
     padding: 1.5em 20px;
     background: $c-footer-background;
     font-size: 13px;
 }
 
-.qq-footer_copyright {
+.dd-footer_copyright {
     margin-bottom: 1.5em;
 }
 
@@ -26,14 +26,14 @@
 
 @media (min-width: 700px) {
 
-    .qq-footer_copyright {
+    .dd-footer_copyright {
         float: left;
         width: 50%;
         margin-bottom: 0;
         padding-right: 20px;
     }
 
-    .qq-footer_credits {
+    .dd-footer_credits {
         float: right;
         width: 50%;
         padding-left: 20px;

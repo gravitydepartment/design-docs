@@ -28,12 +28,12 @@ foreach ($paths as $path) {
 sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
 ?>
 
-<div class="qq-subheader">
+<div class="dd-subheader">
     <h1>Patterns</h1>
 </div>
 
-<div class="qq-container">
-    <div class="qq-pattern-groups">
+<div class="dd-container">
+    <div class="dd-pattern-groups">
         <?php foreach ($files as $file): ?>
             <?php
             $stream  = getFileStreamByString($file);
@@ -55,14 +55,14 @@ sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
 
                 <?php $lastFileFolder = $currentFileFolder; ?>
 
-                <div class="qq-pattern-groups_group">
+                <div class="dd-pattern-groups_group">
                     <h2><?php echo $currentFileFolder; ?></h2>
 
-                    <div class="qq-pattern-group">
+                    <div class="dd-pattern-group">
             <?php endif; ?>
 
-            <div class="qq-pattern-group_item" data-pattern-enabled="<?php echo $isEnabled; ?>">
-                <a class="qq-pattern-group_link" href="<?php echo getUrl('patterns/' . $file); ?>">
+            <div class="dd-pattern-group_item" data-pattern-enabled="<?php echo $isEnabled; ?>">
+                <a class="dd-pattern-group_link" href="<?php echo getUrl('patterns/' . $file); ?>">
                     <?php echo $yaml['name']; ?>
                 </a>
             </div>

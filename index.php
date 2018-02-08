@@ -26,10 +26,10 @@ if (
 // ----------------------------------------------
 // App files
 
-// Extend $defaults with $config as $qq
+// Extend $defaults with $config
 require('app/config-defaults.php');
 require('config.php');
-$qq = array_merge($defaults, $config);
+$config = array_merge($defaults, $config);
 
 require('app/functions.php');
 

@@ -8,23 +8,23 @@
 
 
 // ==============================================
-// QQ Cards
+// DD Cards
 // ==============================================
 
-.qq-cards {
+.dd-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 -15px;
 }
 
-.qq-cards_item {
+.dd-cards_item {
     display: flex;
     width: 100%;
     padding: 0 15px 30px;
 }
 
-.qq-cards_card {
+.dd-cards_card {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -35,15 +35,15 @@
     background: $c-module-background;
 }
 
-.qq-cards_card > :last-child {
+.dd-cards_card > :last-child {
     margin-bottom: 0;
 }
 
-.qq-cards_card h2 {
+.dd-cards_card h2 {
     margin: 0 0 0.5em;
 }
 
-.qq-cards .button-group {
+.dd-cards .button-group {
     margin-top: auto;
 }
 
@@ -51,7 +51,7 @@
 
 @media (min-width: 500px) {
 
-    .qq-cards_item {
+    .dd-cards_item {
         width: 50%;
     }
 
@@ -61,7 +61,7 @@
 
 @media (min-width: 800px) {
 
-    .qq-cards_item {
+    .dd-cards_item {
         width: 33.33%;
     }
 
@@ -71,7 +71,7 @@
 
 @media (min-width: 1100px) {
 
-    .qq-cards_item {
+    .dd-cards_item {
         width: 25%;
     }
 

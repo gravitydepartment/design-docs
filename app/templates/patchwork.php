@@ -25,7 +25,7 @@ foreach ($paths as $path) {
 sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
 ?>
 
-<div class="qq-subheader">
+<div class="dd-subheader">
     <h1>Patchwork</h1>
 </div>
 
@@ -36,10 +36,10 @@ sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
     $content = getContent($stream);
     ?>
 
-    <div class="qq-pattern" data-show-code="hide">
-        <div class="<?php echo $qq['containerClass']; ?>">
-            <div class="qq-heading">
-                <a class="qq-heading_action" href="<?php echo getUrl('patterns/' . $file); ?>">View</a>
+    <div class="dd-pattern" data-show-code="hide">
+        <div class="<?php echo $config['containerClass']; ?>">
+            <div class="dd-heading">
+                <a class="dd-heading_action" href="<?php echo getUrl('patterns/' . $file); ?>">View</a>
                 <?php echo $yaml['name']; ?>
             </div>
         </div>
@@ -47,11 +47,11 @@ sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
         <?php if ($yaml['enabled']): ?>
             <?php echo getWrapperHtml($yaml['wrappers'], 'open'); ?>
             <?php echo $content; ?>
-            <div class="qq-pattern_end">Pattern End</div>
+            <div class="dd-pattern_end">Pattern End</div>
             <?php echo getWrapperHtml($yaml['wrappers'], 'close'); ?>
         <?php else: ?>
-            <div class="<?php echo $qq['containerClass']; ?>">
-                <div class="qq-pattern-disabled">
+            <div class="<?php echo $config['containerClass']; ?>">
+                <div class="dd-pattern-disabled">
                     This pattern is disabled in the design system.
                     Its assets are not included in the build system.
                 </div>
