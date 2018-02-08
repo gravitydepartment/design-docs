@@ -27,7 +27,7 @@ foreach ($paths as $path) {
 <div class="<?php echo $qq['containerClass']; ?>">
     <div class="qq-hero">
         <h1 class="qq-hero_title">
-            <?php echo $qq['designSystemName']; ?>
+            <?php echo $qq['docsName']; ?>
         </h1>
 
         <p>Design system, pattern library, and UX standards for digital services.</p>

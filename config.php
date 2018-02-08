@@ -12,23 +12,30 @@
 // ==============================================
 
 $config = array(
-    'companyName' => 'Gravity Department',
+    // 'companyName' => 'Company Name',
 
-    'containerClass' => 'container',
+    // 'containerClass' => 'container',
 
-    'css' =>
-        '<link href="/skin/frontend/gravdept/acumen/css/build/app.css" rel="stylesheet">'
-        . '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic,300" rel="stylesheet" type="text/css">',
+    // 'css' => array(
+    //     '<link rel="stylesheet" href="/path/to/styles.css">',
+    //     '<link rel="stylesheet" href="/path/to/more-styles.css">',
+    // ),
 
-    'debug' => false,
+    // 'debug' => false,
 
-    'designSystemName' => 'Acumen Design Docs',
+    // 'docsName' => 'Design Docs',
 
-    'designSystemUrl' => '/design/',
+    // 'docsUrl' => '/design/',
 
-    'jsBodyEnd' => '<script src="/skin/frontend/gravdept/acumen/js/build/module-app-post.min.js"></script>',
+    // 'jsBodyEnd' => array(
+    //    '<script src="/path/to/scripts.js"></script>',
+    //    '<script src="/path/to/more-scripts.js"></script>',
+    // ),
 
-    'jsHead' => '<script src="/skin/frontend/gravdept/acumen/js/build/module-app-pre.min.js"></script>',
+    // 'jsHead' => array(
+    //    '<script src="/path/to/scripts.js"></script>',
+    //    '<script src="/path/to/more-scripts.js"></script>',
+    // ),
 
-    'siteUrl' => 'http://gravitydept.com/to/acumen',
+    // 'siteUrl' => '#',
 );

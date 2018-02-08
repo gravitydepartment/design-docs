@@ -15,30 +15,33 @@
 // ==============================================
 
 $defaults = array(
-    // string - Name of the company (for copyright in the footer).
-    'companyName' => 'XYZ Corporation',
+    // {string} - Name of the company (for copyright in the footer).
+    'companyName' => 'Company Name',
 
-    // string - CSS class name for width limiting container
+    // {string} - CSS class name for width limiting container.
     'containerClass' => 'container',
 
-    // string - <link> tags for CSS the patterns require.
-    'css' => '',
+    // {array} - <link> tags for CSS the patterns require.
+    'css' => array(),
 
-    // boolean - Show debug helpers for app
+    // {boolean} - Show debug helpers for app.
     'debug' => false,
 
-    // string - Name of the design system
-    'designSystemName' => 'Quasar Design Docs',
+    // {string} - Name of the design system.
+    'docsName' => 'Design Docs',
 
-    // Is site running from base or sub-directory (requires changing ".htaccess" file). Must include trailing slash.
-    'designSystemUrl'  => '/design/',
+    // If the site runs from a root or sub-directory, you must change the ".htaccess" file.
+    // Must include a trailing slash.
+    // Example: '/' or '/design/'
+    'docsUrl'  => '/',
 
-    // string - <script> required before </body>.
-    'jsBodyEnd' => '',
+    // {string} - <script> required before </body>.
+    'jsBodyEnd' => array(),
 
-    // string - <script> tags required in the <head>.
-    'jsHead' => '',
+    // {string} - <script> tags required in the <head>.
+    'jsHead' => array(),
 
-    // string - URL for the site the design system powers.
-    'siteUrl' => 'http://google.com',
+    // {string} - URL for the site the design system powers.
+    // Example: 'http://google.com'
+    'siteUrl' => '#',
 );
