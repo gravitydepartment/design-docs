@@ -1,8 +1,9 @@
 <?php
 /**
-* Quasar: Design System
+* Gravity Department - Design Docs
+* https://github.com/gravitydepartment/design-docs
 *
-* @author     Brendan Falkowski (http://gravitydept.com)
+* @author     Brendan Falkowski
 * @copyright  Gravity Department. All rights reserved.
 */
 
@@ -13,7 +14,6 @@
 
 // YAML parser
 use secondparty\Dipper\Dipper as Dipper;
-
 
 
 // ==============================================
@@ -28,7 +28,6 @@ function convertToEscapedHtml ($content) {
     return trim(htmlspecialchars($content));
 }
 
-
 /**
 * @param string $markdown
 * @return string
@@ -37,7 +36,6 @@ function convertToMarkdown ($markdown) {
     $parsedown = new Parsedown();
     return $parsedown->text($markdown);
 }
-
 
 /**
 * @param string $slug
@@ -49,7 +47,6 @@ function getAssetUrl ($slug) {
     return $qq['docsUrl'] . 'assets/' . $slug;
 }
 
-
 /**
 * @param string $stream
 * @return string
@@ -58,7 +55,6 @@ function getContent ($stream) {
     $yamlEndPosition = getYamlEndPosition($stream);
     return substr($stream, $yamlEndPosition + 4);
 }
-
 
 /**
 * @return array $paths
@@ -69,7 +65,6 @@ function getContentPaths () {
     return $paths;
 }
 
-
 /**
 * @param string $folder
 * @param string $file
@@ -78,7 +73,6 @@ function getContentPaths () {
 function getFilePath ($folder, $file) {
     return 'content/' . $folder . '/' . $file . '.md';
 }
-
 
 /**
 * @param string $folder
@@ -95,7 +89,6 @@ function getFileStreamByComponent ($folder, $file) {
     return file_get_contents($filePath);
 }
 
-
 /**
 * @param string $file
 * @return string
@@ -108,7 +101,6 @@ function getFileStreamByString ($file) {
     return file_get_contents('content/' . $file . '.md');
 }
 
-
 /**
 * @param string $path
 * @return string
@@ -118,7 +110,6 @@ function getSlugFromPath ($path) {
     $end   = strpos($path, '.');
     return substr($path, $start + 1, $end - $start - 1);
 }
-
 
 /**
 * @param string $slug
@@ -133,7 +124,6 @@ function getUrl ($slug) {
         return $qq['docsUrl'] . $slug . '/';
     }
 }
-
 
 /**
 * @param string $wrappers, Example: "container, panel, panel-liner"
@@ -159,7 +149,6 @@ function getWrapperHtml ($wrappers, $position) {
     return $html;
 }
 
-
 /**
 * @param string $stream
 * @return string
@@ -170,7 +159,6 @@ function getYaml ($stream) {
     return Dipper::parse($yaml);
 }
 
-
 /**
 * @param string $stream
 * @return int
@@ -179,7 +167,6 @@ function getYamlEndPosition ($stream) {
     return strpos($stream, PHP_EOL . '---');
 }
 
-
 /**
 * @param string $path
 * @return boolean
@@ -187,7 +174,6 @@ function getYamlEndPosition ($stream) {
 function isMarkdownFile ($path) {
     return ($path->isFile() && substr($path, -3) === '.md') ? true : false;
 }
-
 
 /**
 * @param string $folder
@@ -200,7 +186,6 @@ function validateFileExists ($folder, $file) {
     return (file_exists($filePath)) ? true : false;
 }
 
-
 /**
 * @param string $file
 * @return boolean
@@ -209,7 +194,6 @@ function validateFileRequest ($file) {
     // See: http://rubular.com/r/RcgJOaKnzL
     return (preg_match("/^[\w-]+(\/){1}[\w-]+$/", $file)) ? true : false;
 }
-
 
 /**
 * @param string $folder
@@ -222,7 +206,6 @@ function validatePatternRequest ($folder, $pattern) {
     // See: http://rubular.com/r/RcgJOaKnzL
     return (preg_match("/^[\w-]+(\/){1}[\w-]+$/", $candidate)) ? true : false;
 }
-
 
 /**
 * @param string $module

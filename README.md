@@ -1,4 +1,4 @@
-# GravDept Quasar
+# GravDept Design Docs
 
 Document your design system and pattern library.
 
@@ -9,7 +9,7 @@ Document your design system and pattern library.
 - PHP
 - Apache
 
-## Configuration
+## Setup
 
 ### URL path
 
@@ -21,7 +21,7 @@ domain.com/design/
 
 When using a subdomain, you can remove the directoy path from each `RewriteRule`.
 
-### Quasar configuration
+### Configuration
 
 See `config.php` and make changes for your environment.
 
