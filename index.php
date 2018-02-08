@@ -49,9 +49,11 @@ if (isset($_GET['p1'])) {
             case 'debug':
                 $template = 'debug';
                 break;
-            // case 'page':
-            //     $template = $_GET['p2'];
-            //     break;
+            /*
+            case 'page':
+                $template = $_GET['p2'];
+                break;
+            */
             case 'patchwork':
                 $template = 'patchwork';
                 break;
