@@ -36,10 +36,10 @@ $defaults = array(
     // Example: '/' or '/design/'
     'docsUrl'  => '/',
 
-    // {string} - <script> required before </body>.
+    // {array} - <script> required before </body>.
     'jsBodyEnd' => array(),
 
-    // {string} - <script> tags required in the <head>.
+    // {array} - <script> tags required in the <head>.
     'jsHead' => array(),
 
     // {string} - URL for the site the design system powers.
