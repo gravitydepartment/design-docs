@@ -7,50 +7,24 @@
 
 
 // ==============================================
-// Vars
+// Core
 // ==============================================
 
-$c-body-background:   #FFF;
+@import 'core/var/color';
 
-$c-header-background: #505868;
-$c-header-link:       #FFFFFF;
-$c-header-link-hover: #3498DB;
-
-$c-subheader-background: #DCDDE1;
-
-$c-footer-background: #DCDDE1;
-
-// Components
-
-$c-button:       #3498DB;
-$c-button-hover: #2980B9;
-
-$c-module-background:       #F4F4F4;
-$c-module-background-hover: #E8E8E8;
-$c-module-border:           #DCDDE1;
-
-$c-pattern-disabled-background: #FFDDDD;
-
-$c-heading-background: #505868;
-$c-heading-link:       #3498DB;
-$c-heading-link-hover: #2980B9;
-$c-heading-text:       #FFFFFF;
-
-$c-text-subtle: #B0B0B0;
-
+@import 'core/reset/qq-reset';
 
 
 // ==============================================
-// Partials
+// Vendor
 // ==============================================
 
-@import 'component/qq-reset';
+@import 'vendor/prism';
 
-@import 'layout/qq-global';
-@import 'layout/qq-header';
-@import 'layout/qq-subheader';
-@import 'layout/qq-matter';
-@import 'layout/qq-footer';
+
+// ==============================================
+// Component
+// ==============================================
 
 @import 'component/qq-button';
 @import 'component/qq-cards';
@@ -59,8 +33,17 @@ $c-text-subtle: #B0B0B0;
 @import 'component/qq-heading';
 @import 'component/qq-hero';
 @import 'component/qq-pattern';
+@import 'component/qq-pattern-group';
 @import 'component/qq-pattern-groups';
-@import 'component/qq-pattern-list';
 @import 'component/qq-text';
 
-@import 'vendor/prism';
+
+// ==============================================
+// Layout
+// ==============================================
+
+@import 'layout/qq-global';
+@import 'layout/qq-header';
+@import 'layout/qq-subheader';
+@import 'layout/qq-matter';
+@import 'layout/qq-footer';

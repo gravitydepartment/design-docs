@@ -12,10 +12,15 @@
 
 html {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit; // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+}
+
+body {
+    margin: 0;
 }
