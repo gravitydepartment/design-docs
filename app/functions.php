@@ -46,7 +46,7 @@ function convertToMarkdown ($markdown) {
 function getAssetUrl ($slug) {
     global $qq;
 
-    return $qq['designSystemUrl'] . 'app/assets/' . $slug;
+    return $qq['designSystemUrl'] . 'assets/' . $slug;
 }
 
 

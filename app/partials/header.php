@@ -15,7 +15,7 @@
     <title><?php echo $qq['designSystemName']; ?></title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-    <link href="<?php echo getAssetUrl('css/app.css'); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo getAssetUrl('css/build/app.css'); ?>">
 
     <?php
     echo $qq['css'];

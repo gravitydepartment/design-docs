@@ -1,0 +1,36 @@
+{
+    "maxerr"        : 50,       // {int} Maximum error before stopping
+
+    // Enforcing
+    "bitwise"       : true,     // true: Prohibit bitwise operators (&, |, ^, etc.)
+    "camelcase"     : false,    // true: Identifiers must be in camelCase
+    "curly"         : false,    // true: Require {} for every new block or scope
+    "eqeqeq"        : true,     // true: Require triple equals (===) for comparison
+    "indent"        : 4,        // {int} Number of spaces to use for indentation
+    "undef"         : false,    // true: Require all non-global variables to be declared (prevents global leaks)
+
+
+    // Relaxing
+    "boss"          : true,     // true: Tolerate assignments where comparisons would be expected
+    "evil"          : true,     // true: Tolerate use of `eval` and `new Function()`
+    "expr"          : true,     // true: Tolerate `ExpressionStatement` as Programs
+    "funcscope"     : true,     // true: Tolerate defining variables inside control statements
+    "laxbreak"      : true,     // true: Tolerate possibly unsafe line breakings
+    "loopfunc"      : true,     // true: Tolerate functions being defined in loops
+    "shadow"        : true,     // true: Allows re-define variables later in code e.g. `var x=1; x=2;`
+    "sub"           : true,     // true: Tolerate using `[]` notation when it can still be expressed in dot notation
+
+
+    // Environments
+    "browser"       : true,    // Web Browser (window, document, etc)
+    "devel"         : true,    // Development/debugging (alert, confirm, etc)
+    "jquery"        : true,    // jQuery
+    "prototypejs"   : true,    // Prototype and Scriptaculous
+
+
+    // Custom Globals
+    "globals": {
+        "$"          : true,
+        "jQuery"     : false
+    }
+}
