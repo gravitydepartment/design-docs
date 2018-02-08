@@ -45,7 +45,7 @@ $content = getContent($stream);
 
         <div class="qq-pattern-docs_column">
             <h2 class="qq-heading">
-                <button type="button" class="qq-heading_action copy-to-clipboard" data-clipboard-target="#qq-pattern-code">Copy</button>
+                <button type="button" class="qq-heading_action copy-to-clipboard" data-clipboard-action="copy" data-clipboard-target="#qq-pattern-code">Copy</button>
                 HTML
             </h2>
 

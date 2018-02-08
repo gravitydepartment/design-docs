@@ -7,7 +7,7 @@
 
 
 // ==============================================
-// Quasar Init
+// Clipboard
 // ==============================================
 
-new Clipboard('.copy-to-clipboard');
+new Clipboard('[data-clipboard-action]');

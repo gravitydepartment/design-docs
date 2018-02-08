@@ -80,8 +80,8 @@ var task = {
         },
         src: [
             // Libraries
-            path.assets + 'js/src/vendor/clipboard.js',
-            path.assets + 'js/src/vendor/prism.js',
+            path.assets + 'js/src/vendor/clipboard.min.js',
+            path.assets + 'js/src/vendor/prism.min.js',
             // Initialize components
             path.assets + 'js/src/app.js'
         ],
