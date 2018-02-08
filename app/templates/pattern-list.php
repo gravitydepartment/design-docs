@@ -48,7 +48,7 @@ sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
 
             <?php if ($currentFileFolder !== $lastFileFolder): ?>
                 <?php if ($lastFileFolder !== ''): ?>
-                        </ul>
+                        </div>
                     </div>
                 <?php endif; ?>
 
@@ -56,17 +56,18 @@ sort($files, SORT_STRING | SORT_NATURAL | SORT_FLAG_CASE);
 
                 <div class="qq-pattern-groups_group">
                     <h2><?php echo $currentFileFolder; ?></h2>
-                    <ul class="qq-pattern-list">
+
+                    <div class="qq-pattern-group">
             <?php endif; ?>
 
-            <li data-pattern-enabled="<?php echo $isEnabled; ?>">
-                <a href="<?php echo getUrl('patterns/' . $file); ?>">
+            <div class="qq-pattern-group_item" data-pattern-enabled="<?php echo $isEnabled; ?>">
+                <a class="qq-pattern-group_link" href="<?php echo getUrl('patterns/' . $file); ?>">
                     <?php echo $yaml['name']; ?>
                 </a>
-            </li>
+            </div>
 
             <?php if (count($files) === $i): ?>
-                    </ul>
+                    </div>
                 </div>
             <?php endif; ?>
         <?php endforeach; ?>

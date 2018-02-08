@@ -7,23 +7,35 @@
 
 
 // ==============================================
-// QQ Pattern List
+// QQ Pattern Group
 // ==============================================
 
-.qq-pattern-list {
+.qq-pattern-group {
     overflow: hidden;
     margin-bottom: 2.5em;
 }
 
-.qq-pattern-list li:first-child {
-    border-top: 1px solid $c-module-border;
+
+// ==============================================
+// QQ Pattern Group - Item
+// ==============================================
+
+.qq-pattern-group_item {
+    &:first-child {
+        border-top: 1px solid $c-module-border;
+    }
 }
 
-.qq-pattern-list [data-pattern-enabled='0'] {
+.qq-pattern-group_item[data-pattern-enabled='0'] {
     opacity: 0.4;
 }
 
-.qq-pattern-list a {
+
+// ==============================================
+// QQ Pattern Group - Link
+// ==============================================
+
+.qq-pattern-group_link {
     display: block;
     padding: 7px 10px;
     border-bottom: 1px solid $c-module-border;
