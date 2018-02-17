@@ -83,7 +83,7 @@ gulp.task('css', function () {
         sourcemaps.init(),
         sass(task.sassOptions),
         autoprefixer(task.autoprefixerOptions),
-        sourcemaps.write('../map'),
+        sourcemaps.write(task.mapDest),
         gulp.dest(task.dest),
         gulpif(!isSilent, notify(task.notifyOptions))
     ], errorHandler);
@@ -129,7 +129,7 @@ function createJsModule (task) {
             sourcemaps.init(),
             uglify(task.uglifyOptions),
             concat(task.file),
-            sourcemaps.write('../map'),
+            sourcemaps.write(task.mapDest),
             gulp.dest(task.dest),
             gulpif(!isSilent, notify(task.notifyOptions))
         ], errorHandler);

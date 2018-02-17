@@ -32,6 +32,7 @@ var task = {
             supports: false // See: https://github.com/filamentgroup/select-css/issues/17
         },
         dest: path.assets + 'css/build',
+        mapDest: '../map',
         notifyOptions: {
             title: 'CSS',
             message: 'Done',
@@ -74,6 +75,7 @@ var task = {
     jsApp: {
         dest: path.assets + 'js/build',
         file: 'app.min.js',
+        mapDest: '../map',
         notifyOptions: {
             title: 'JS: Module: App Post',
             message: 'Done',
