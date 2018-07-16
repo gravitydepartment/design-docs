@@ -11,33 +11,33 @@
 // Color - Layout
 // ==============================================
 
-$c-body-background:   #FFF;
+$c-body-background:   #FFF !default;
 
-$c-header-background: #505868;
-$c-header-link:       #FFFFFF;
-$c-header-link-hover: #3498DB;
+$c-header-background: #505868 !default;
+$c-header-link:       #FFF    !default;
+$c-header-link-hover: #3498DB !default;
 
-$c-subheader-background: #DCDDE1;
+$c-subheader-background: #DCDDE1 !default;
 
-$c-footer-background: #DCDDE1;
+$c-footer-background: #DCDDE1 !default;
 
 
 // ==============================================
 // Color - Component
 // ==============================================
 
-$c-button:       #3498DB;
-$c-button-hover: #2980B9;
+$c-button:       #3498DB !default;
+$c-button-hover: #2980B9 !default;
 
-$c-module-background:       #F4F4F4;
-$c-module-background-hover: #E8E8E8;
-$c-module-border:           #DCDDE1;
+$c-module-background:       #F4F4F4 !default;
+$c-module-background-hover: #E8E8E8 !default;
+$c-module-border:           #DCDDE1 !default;
 
-$c-pattern-disabled-background: #FFDDDD;
+$c-pattern-disabled-background: #FDD !default;
 
-$c-heading-background: #505868;
-$c-heading-link:       #3498DB;
-$c-heading-link-hover: #2980B9;
-$c-heading-text:       #FFFFFF;
+$c-heading-background: #505868 !default;
+$c-heading-link:       #3498DB !default;
+$c-heading-link-hover: #2980B9 !default;
+$c-heading-text:       #FFF    !default;
 
-$c-text-subtle: #B0B0B0;
+$c-text-subtle: #B0B0B0 !default;
