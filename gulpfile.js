@@ -15,10 +15,10 @@ var autoprefixer = require('gulp-autoprefixer');
 var changed      = require('gulp-changed');
 var concat       = require('gulp-concat');
 var del          = require('del');
+var eslint       = require('gulp-eslint');
 var gulp         = require('gulp');
 var gulpif       = require('gulp-if');
 var imagemin     = require('gulp-imagemin');
-var jshint       = require('gulp-jshint');
 var minimist     = require('minimist');
 var notify       = require('gulp-notify');
 var pump         = require('pump');
@@ -30,7 +30,6 @@ var uglify       = require('gulp-uglify');
 // GravDept modules
 var config          = require('./gulp/config.js');
 var errorHandler    = require('./gulp/error-handler.js');
-//var stylelintConfig = require('./gulp/stylelint-config.js');
 
 
 // ==============================================
@@ -52,7 +51,7 @@ gulp.task('default', ['clean'], function () {
     gulp.start('css');
     gulp.start('image');
     gulp.start('jsApp');
-    //gulp.start('lintCss');
+    gulp.start('lintCss');
     gulp.start('lintJs');
 });
 
@@ -149,12 +148,13 @@ gulp.task('lintCss', function () {
     return gulp
     .src(task.src)
     .pipe(stylelint({
-        config: stylelintConfig,
         reporters: [{
             formatter: 'string',
             console: true
         }]
-    }));
+    }))
+    .on('error', errorHandler)
+    .pipe(gulpif(!isSilent, notify(task.notifyOptions)));
 });
 
 
@@ -165,13 +165,13 @@ gulp.task('lintCss', function () {
 gulp.task('lintJs', function () {
     var task = config.task.lintJs;
 
-    pump([
-        gulp.src(task.src),
-        jshint(),
-        jshint.reporter('jshint-stylish'),
-        jshint.reporter('fail'),
-        gulpif(!isSilent, notify(task.notifyOptions))
-    ], errorHandler);
+    return gulp
+    .src(task.src)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError())
+    .on('error', errorHandler)
+    .pipe(gulpif(!isSilent, notify(task.notifyOptions)));
 });
 
 
@@ -184,7 +184,7 @@ gulp.task('watch', function () {
     gulp.start('default');
 
     // CSS
-    gulp.watch(config.task.css.src, ['css']);
+    gulp.watch(config.task.css.src, ['lintCss', 'css']);
 
     // Image
     gulp.watch(config.task.image.src, ['image']);

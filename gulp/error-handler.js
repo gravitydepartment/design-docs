@@ -28,54 +28,48 @@ module.exports = function (error) {
         // ----------------------------------------------
         // Normalize error responses
 
-        var plugin = error.plugin;
+        var chalk  = gutil.colors.red;
+        var report = ['\n'];
+        var notifyMessage = '';
 
-        if (plugin == 'gulp-jshint') {
-            var path   = 'N/A';
-            var file   = 'N/A';
-            var line   = 'N/A';
-            var column = 'N/A';
-            var note   = 'N/A';
+        if (error.plugin == 'gulp-eslint') {
+            report.push(chalk('Plugin: ') + error.plugin     + '\n');
+            report.push(chalk('File:   ') + error.fileName   + '\n');
+            report.push(chalk('Line:   ') + error.lineNumber + '\n');
+            report.push(chalk('Note:   ') + error.message    + '\n');
 
-            var notifyMessage = 'JS Hint errors found.';
+            notifyMessage = 'JS linter found errors.';
         }
 
-        if (plugin === 'gulp-sass') {
-            var path   = error.file;
-            var file   = error.relativePath;
-            var line   = error.line;
-            var column = error.column;
-            var note   = error.messageOriginal;
+        if (error.plugin === 'gulp-sass') {
+            report.push(chalk('Plugin: ') + error.plugin          + '\n');
+            report.push(chalk('File:   ') + error.relativePath    + '\n');
+            report.push(chalk('Line:   ') + error.line            + '\n');
+            report.push(chalk('Column: ') + error.column          + '\n');
+            report.push(chalk('Note:   ') + error.messageOriginal + '\n');
 
-            var notifyMessage = file + '\n' + line + ' : ' + column;
+            notifyMessage = error.relativePath + '\n' + error.line + ' : ' + error.column;
         }
 
-        if (plugin === 'gulp-uglify') {
-            var path   = error.fileName;
-            var file   = error.cause.filename;
-            var line   = error.cause.line;
-            var column = error.cause.col;
-            var note   = error.cause.message;
+        if (error.plugin == 'gulp-stylelint') {
+            notifyMessage = 'CSS linter found errors.';
+        }
 
-            var notifyMessage = file + '\n' + line + ' : ' + column;
+        if (error.plugin === 'gulp-uglify') {
+            report.push(chalk('Plugin: ') + error.plugin         + '\n');
+            report.push(chalk('Path:   ') + error.fileName       + '\n');
+            report.push(chalk('File:   ') + error.cause.filename + '\n');
+            report.push(chalk('Line:   ') + error.cause.line     + '\n');
+            report.push(chalk('Column: ') + error.cause.col      + '\n');
+            report.push(chalk('Note:   ') + error.cause.message  + '\n');
+
+            notifyMessage = error.cause.filename + '\n' + error.cause.line + ' : ' + error.cause.col;
         }
 
         // ----------------------------------------------
         // Show error in console
 
-        if (plugin !== 'gulp-jshint') {
-            var chalk  = gutil.colors.red;
-            var report = ['\n'];
-
-            report.push(chalk('Plugin: ') + plugin + '\n');
-            report.push(chalk('Path:   ') + path   + '\n');
-            report.push(chalk('File:   ') + file   + '\n');
-            report.push(chalk('Line:   ') + line   + '\n');
-            report.push(chalk('Column: ') + column + '\n');
-            report.push(chalk('Note:   ') + note   + '\n');
-
-            console.error(report.join(''));
-        }
+        console.error(report.join(''));
 
         // ----------------------------------------------
         // Fire Mac/Windows notification for error
