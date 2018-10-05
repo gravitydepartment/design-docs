@@ -26,7 +26,7 @@ module.exports = {
         // Possible errors
 
         "at-rule-no-unknown": [true, {
-            "ignoreAtRules": ["function", "if", "include", "mixin", "return"] // For Sass
+            "ignoreAtRules": ["function", "each", "if", "include", "mixin", "return"] // For Sass
         }],
         "block-no-empty": true,
         "color-no-invalid-hex": true,
