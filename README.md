@@ -1,6 +1,6 @@
 # GravDept Design Docs
 
-Document your design system and pattern library.
+Document your design system and pattern library using Markdown in a small LAMP application.
 
 [![Gravity Department](http://gravitydept.com/_themes/gravdept/img/logo-footer.png)](http://gravitydept.com/)
 
@@ -25,6 +25,14 @@ When using a subdomain, you can remove the directoy path from each `RewriteRule`
 
 See `config.php` and make changes for your environment.
 
+## Build system
+
+A Gulp-based build system generates the assets required by Design Docs. These can be committed once, and will rarely change unless you customize the Design Docs application.
+
 ## Usage
 
 In the `content` folder, add folders and Markdown files.
+
+## Issues
+
+[Submit issues](https://github.com/gravitydepartment/design-docs/issues) on GitHub.
