@@ -1,9 +1,9 @@
 /**
-* Gravity Department - Design Docs
-* https://github.com/gravitydepartment/design-docs
+* Gravity Department - Frontend Starter
+* https://github.com/gravitydepartment/frontend-starter
 *
-* @author     Brendan Falkowski
-* @copyright  Gravity Department. All rights reserved.
+* @author    Brendan Falkowski
+* @copyright Gravity Department. All rights reserved.
 */
 
 
@@ -12,7 +12,7 @@
 // ==============================================
 
 var path = {
-    assets: 'assets/'
+    assets: './assets/'
 };
 
 var task = {
@@ -28,8 +28,7 @@ var task = {
     css: {
         autoprefixerOptions: {
             // For "browserslist" see "package.json"
-            cascade: false,
-            supports: false // See: https://github.com/filamentgroup/select-css/issues/17
+            cascade: false
         },
         dest: path.assets + 'css/build',
         mapDest: '../map',
@@ -74,10 +73,10 @@ var task = {
     },
     jsApp: {
         dest: path.assets + 'js/build',
-        file: 'app.min.js',
+        file: 'bundle-app.js',
         mapDest: '../map',
         notifyOptions: {
-            title: 'JS: Module: App Post',
+            title: 'JS: App',
             message: 'Done',
             onLast: true
         },
@@ -101,7 +100,13 @@ var task = {
         src: [
             path.assets + 'css/src/**/*.scss',
             '!' + path.assets + 'css/src/vendor/**'
-        ]
+        ],
+        stylelintOptions: {
+            reporters: [{
+                formatter: 'string',
+                console: true
+            }]
+        }
     },
     lintJs: {
         notifyOptions: {
@@ -113,6 +118,11 @@ var task = {
             path.assets + 'js/src/**/*.js',
             '!' + path.assets + 'js/src/vendor/**'
         ]
+    },
+    watch: {
+        options: {
+            ignoreInitial: false
+        }
     }
 };
 

@@ -1,9 +1,9 @@
 /**
-* Gravity Department - Design Docs
-* https://github.com/gravitydepartment/design-docs
+* Gravity Department - Frontend Starter
+* https://github.com/gravitydepartment/frontend-starter
 *
-* @author     Brendan Falkowski
-* @copyright  Gravity Department. All rights reserved.
+* @author    Brendan Falkowski
+* @copyright Gravity Department. All rights reserved.
 */
 
 
@@ -12,7 +12,6 @@
 // ==============================================
 
 var autoprefixer = require('gulp-autoprefixer');
-var changed      = require('gulp-changed');
 var concat       = require('gulp-concat');
 var del          = require('del');
 var eslint       = require('gulp-eslint');
@@ -21,174 +20,168 @@ var gulpif       = require('gulp-if');
 var imagemin     = require('gulp-imagemin');
 var minimist     = require('minimist');
 var notify       = require('gulp-notify');
-var pump         = require('pump');
+var pipeline     = require('stream').pipeline;
 var sass         = require('gulp-sass');
-var sourcemaps   = require('gulp-sourcemaps');
 var stylelint    = require('gulp-stylelint');
 var uglify       = require('gulp-uglify');
 
 // GravDept modules
-var config          = require('./gulp/config.js');
-var errorHandler    = require('./gulp/error-handler.js');
+var config         = require('./gulp/config');
+var errorFormatter = require('./gulp/error-formatter');
 
 
 // ==============================================
-// Notifications
+// Arguments
 // ==============================================
-
-// Run "gulp" without arguments for helpful dev notifications.
-// Run "gulp --silent" to suppress notifications on the server.
 
 var arguments = minimist(process.argv.slice(2));
-var isSilent  = (arguments.silent) ? true : false;
 
-
-// ==============================================
-// Default
-// ==============================================
-
-gulp.task('default', ['clean'], function () {
-    gulp.start('css');
-    gulp.start('image');
-    gulp.start('jsApp');
-    gulp.start('lintCss');
-    gulp.start('lintJs');
-});
+// Use "gulp --hide-notify" to suppress Mac/Windows notifications.
+var hideNotify = (arguments['hide-notify']) ? true : false;
 
 
 // ==============================================
 // Clean
 // ==============================================
 
-// Delete old generated files.
-// Return a "promise" to ensure completion before proceeding to generation tasks.
-// See: https://github.com/sindresorhus/del/releases/tag/v2.0.0
-
-gulp.task('clean', function () {
-    var task = config.task.clean;
-    return del(task.pathsToDelete);
-});
+/**
+ * Delete old generated files.
+ * Return a "promise" to ensure completion before proceeding to generation tasks.
+ * See: https://github.com/sindresorhus/del/releases/tag/v2.0.0
+ * @return {promise}
+ */
+function clean () {
+    return del(config.task.clean.pathsToDelete);
+};
 
 
 // ==============================================
 // CSS
 // ==============================================
 
-gulp.task('css', function () {
+function css () {
     var task = config.task.css;
 
-    pump([
-        gulp.src(task.src),
-        sourcemaps.init(),
+    return pipeline([
+        gulp.src(task.src, { sourcemaps: true }),
         sass(task.sassOptions),
         autoprefixer(task.autoprefixerOptions),
-        sourcemaps.write(task.mapDest),
-        gulp.dest(task.dest),
-        gulpif(!isSilent, notify(task.notifyOptions))
-    ], errorHandler);
-});
+        gulpif(!hideNotify, notify(task.notifyOptions)),
+        gulp.dest(task.dest, { sourcemaps: task.mapDest })
+    ], errorFormatter);
+};
 
 
 // ==============================================
 // Image
 // ==============================================
 
-// Don't use "pump" for error handling.
-// See: https://github.com/sindresorhus/gulp-imagemin/issues/285
-
-gulp.task('image', function () {
+function image () {
     var task = config.task.image;
 
-    return gulp
-    .src(task.src)
-    .pipe(changed(task.dest))
-    .pipe(imagemin([
-        imagemin.gifsicle(task.imageminOptions.gif),
-        imagemin.jpegtran(task.imageminOptions.jpg),
-        imagemin.optipng(task.imageminOptions.png),
-        imagemin.svgo(task.imageminOptions.svg)
-    ]))
-    .pipe(gulp.dest(task.dest))
-    .pipe(gulpif(!isSilent, notify(task.notifyOptions)));
-});
+    return pipeline([
+        gulp.src(task.src, { since: gulp.lastRun(image) }),
+        imagemin([
+            imagemin.gifsicle(task.imageminOptions.gif),
+            imagemin.jpegtran(task.imageminOptions.jpg),
+            imagemin.optipng(task.imageminOptions.png),
+            imagemin.svgo(task.imageminOptions.svg)
+        ]),
+        gulpif(!hideNotify, notify(task.notifyOptions)),
+        gulp.dest(task.dest)
+    ], errorFormatter);
+};
 
 
 // ==============================================
-// JS Modules
+// JS
 // ==============================================
 
 /**
  * @param {object} task - Task config object like `config.task.taskName`
  * @return {function} - See: https://github.com/gulpjs/gulp/issues/2039
  */
-function createJsModule (task) {
-    return function () {
-        pump([
-            gulp.src(task.src),
-            sourcemaps.init(),
-            uglify(task.uglifyOptions),
-            concat(task.file),
-            sourcemaps.write(task.mapDest),
-            gulp.dest(task.dest),
-            gulpif(!isSilent, notify(task.notifyOptions))
-        ], errorHandler);
-    };
+function bundleJs (task) {
+    return pipeline([
+        gulp.src(task.src, { sourcemaps: true }),
+        uglify(task.uglifyOptions),
+        concat(task.file),
+        gulpif(!hideNotify, notify(task.notifyOptions)),
+        gulp.dest(task.dest, { sourcemaps: task.mapDest })
+    ], errorFormatter);
 }
 
-gulp.task('jsApp', createJsModule(config.task.jsApp));
+var jsApp = () => bundleJs(config.task.jsApp);
 
 
 // ==============================================
 // Lint CSS
 // ==============================================
 
-gulp.task('lintCss', function () {
+function lintCss () {
     var task = config.task.lintCss;
 
-    return gulp
-    .src(task.src)
-    .pipe(stylelint({
-        reporters: [{
-            formatter: 'string',
-            console: true
-        }]
-    }))
-    .on('error', errorHandler)
-    .pipe(gulpif(!isSilent, notify(task.notifyOptions)));
-});
+    return pipeline([
+        gulp.src(task.src),
+        stylelint(task.stylelintOptions),
+        gulpif(!hideNotify, notify(task.notifyOptions))
+    ], errorFormatter);
+};
 
 
 // ==============================================
 // Lint JS
 // ==============================================
 
-gulp.task('lintJs', function () {
+function lintJs () {
     var task = config.task.lintJs;
 
-    return gulp
-    .src(task.src)
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failOnError())
-    .on('error', errorHandler)
-    .pipe(gulpif(!isSilent, notify(task.notifyOptions)));
-});
+    return pipeline([
+        gulp.src(task.src),
+        eslint(),
+        eslint.format(),
+        eslint.failOnError(),
+        gulpif(!hideNotify, notify(task.notifyOptions))
+    ], errorFormatter);
+};
 
 
 // ==============================================
 // Watch
 // ==============================================
 
-gulp.task('watch', function () {
-    // Default: always runs immediately on "gulp watch"
-    gulp.start('default');
+function watch () {
+    var task = config.task.watch;
 
     // CSS
-    gulp.watch(config.task.css.src, ['lintCss', 'css']);
+    gulp.watch(config.task.css.src, task.options, gulp.parallel(lintCss, css));
 
     // Image
-    gulp.watch(config.task.image.src, ['image']);
+    gulp.watch(config.task.image.src, task.options, gulp.parallel(image));
 
     // JS
-    gulp.watch(config.task.jsApp.src, ['lintJs', 'jsApp']);
-});
+    gulp.watch(config.task.jsApp.src, task.options, gulp.parallel(lintJs, jsApp));
+}
+
+
+// ==============================================
+// Export Tasks
+// ==============================================
+
+const js = gulp.parallel(
+    jsApp
+);
+
+const lint  = gulp.parallel(lintCss, lintJs);
+const build = gulp.parallel(css, image, js, lint);
+
+exports.build   = build;
+exports.clean   = clean;
+exports.css     = css;
+exports.default = gulp.series(clean, build);
+exports.image   = image;
+exports.js      = js;
+exports.lint    = lint;
+exports.lintCss = lintCss;
+exports.lintJs  = lintJs;
+exports.watch   = gulp.series(clean, watch);

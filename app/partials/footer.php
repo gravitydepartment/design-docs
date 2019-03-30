@@ -36,7 +36,7 @@
         </footer>
 
         <?php echo implode($config['jsBodyEnd']); ?>
-        <script src="<?php echo getAssetUrl('js/build/app.min.js'); ?>"></script>
+        <script src="<?php echo getAssetUrl('js/build/bundle-app.js'); ?>"></script>
     </div><!-- .dd-site-wrapper -->
 </body>
 </html>
