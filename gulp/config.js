@@ -32,10 +32,11 @@ var task = {
         },
         dest: path.assets + 'css/build',
         mapDest: '../map',
+        // Must be JSON. See: https://github.com/mikaelbr/gulp-notify/issues/129
         notifyOptions: {
-            title: 'CSS',
-            message: 'Done',
-            onLast: true
+            "title": "CSS",
+            "message": "Done",
+            "onLast": true
         },
         sassOptions: {
             outputStyle: 'compressed'
@@ -62,10 +63,11 @@ var task = {
                 ]
             }
         },
+        // Must be JSON. See: https://github.com/mikaelbr/gulp-notify/issues/129
         notifyOptions: {
-            title: 'Image',
-            message: 'Done',
-            onLast: true
+            "title": "Image",
+            "message": "Done",
+            "onLast": true
         },
         src: [
             path.assets + 'img/src/**/*'
@@ -76,9 +78,9 @@ var task = {
         file: 'bundle-app.js',
         mapDest: '../map',
         notifyOptions: {
-            title: 'JS: App',
-            message: 'Done',
-            onLast: true
+            "title": "JS: App",
+            "message": "Done",
+            "onLast": true
         },
         src: [
             // Libraries
@@ -92,10 +94,11 @@ var task = {
         }
     },
     lintCss: {
+        // Must be JSON. See: https://github.com/mikaelbr/gulp-notify/issues/129
         notifyOptions: {
-            title: 'Lint: CSS',
-            message: 'Done',
-            onLast: true
+            "title": "Lint: CSS",
+            "message": "Done",
+            "onLast": true
         },
         src: [
             path.assets + 'css/src/**/*.scss',
@@ -109,10 +112,11 @@ var task = {
         }
     },
     lintJs: {
+        // Must be JSON. See: https://github.com/mikaelbr/gulp-notify/issues/129
         notifyOptions: {
-            title: 'Lint: JS',
-            message: 'Done',
-            onLast: true
+            "title": "Lint: JS",
+            "message": "Done",
+            "onLast": true
         },
         src: [
             path.assets + 'js/src/**/*.js',
